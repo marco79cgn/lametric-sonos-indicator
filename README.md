@@ -49,10 +49,11 @@ $ python3 main.py
 
 It's also possible to launch this indicator with Docker. Apply the following steps to build and run it:
 ```
-# cd lametric-sonos-indicator # this clonned repository
-# docker build -t lametric-sonos .
+cd lametric-sonos-indicator # -> this cloned repository
 
-# docker run \
+docker build -t lametric-sonos .
+
+docker run \
   -d \
   --name lametric-sonos \
   --net host \
