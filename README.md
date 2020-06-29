@@ -4,7 +4,7 @@
   <img width="550" src="image.gif" />
 </p>
 
-This indicator shows current song which Sonos plays on Lametric Clock. The script should be launched externally on some 3rd system (like a [Raspberry Pi](https://www.raspberrypi.org/)) in your local network. This fork relies on the [node-sonos-http-api](https://github.com/jishi/node-sonos-http-api) and assumes you have it running as well. Unfortunately [official Lametric application](https://apps.lametric.com/apps/display_for_sonos/4961) is buggy and doesn't work correct at least for me. The [SoCo](https://github.com/SoCo/SoCo) python library has problems with the metadata of some of my favorite TuneIn radio stations (like 'Radioeins vom rbb'). Therefore I made this fork, removed the SoCo dependency and queried the metadata from Node Sonos HTTP api instead.
+This indicator displays the current song of your Sonos system on your Lametric Clock. The script should be running on a system like the [Raspberry Pi](https://www.raspberrypi.org/)) in your local network. This fork relies on the [node-sonos-http-api](https://github.com/jishi/node-sonos-http-api) and assumes you have it running as well. Unfortunately [official Lametric application](https://apps.lametric.com/apps/display_for_sonos/4961) is buggy and doesn't work correct at least for me. The [SoCo](https://github.com/SoCo/SoCo) python library has problems with the metadata of some of my favorite TuneIn radio stations (like 'Radioeins vom rbb'). Therefore I made this fork, removed the SoCo dependency and queried the metadata from Node Sonos HTTP api instead.
 
 ## Requirements
 
