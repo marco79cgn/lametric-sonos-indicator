@@ -13,11 +13,11 @@ This indicator displays the current song of your Sonos system on your Lametric C
 
 ## Traditional Installation
 
-Clone code:
+Clone repository:
 ```
-$ git clone git@github.com:ipeacocks/lametric-sonos-indicator.git
+$ git clone git@github.com:marco79cgn/lametric-sonos-indicator.git
 ```
-Simply create virtualenv:
+Create virtual env:
 ```
 $ cd lametric-sonos-indicator
 $ python3 -m venv venv
@@ -37,16 +37,17 @@ $ export LAMETRIC_IP="192.168.1.25"
 $ export DELAY=30
 $ export NODE_SONOS_HTTP_API_IP="192.168.1.10"
 ```
-`DELAY` is a time in seconds how often to send notification to Lametric Time.
+`DELAY` is a time in seconds how often the notifications are sent to your Lametric Time.
+`NODE_SONOS_HTTP_API_IP` is the ip address of the host where your node sonos http api is running.
 
-And then lauch:
+Launch it:
 ```
 $ python3 main.py
 ```
 
 ## Docker
 
-Also it's possible to launch this indicator in docker, but you need to build this image by yourself:
+It's also possible to launch this indicator with Docker. Apply the following steps to build and run it:
 ```
 # cd lametric-sonos-indicator # this clonned repository
 # docker build -t lametric-sonos .
@@ -63,7 +64,7 @@ Also it's possible to launch this indicator in docker, but you need to build thi
   lametric-sonos
 ```
 
-That's it. Hope it would be useful for you.
+That's it. I hope this is useful for you.
 
 **Links**: \
 https://lametric-documentation.readthedocs.io/en/latest/index.html \
