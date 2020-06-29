@@ -4,13 +4,13 @@
   <img width="550" src="image.gif" />
 </p>
 
-This indicator shows current song which Sonos plays on Lametric Clock. Script should be launched externally on some 3rd system (maybe like [Raspberry Pi](https://www.raspberrypi.org/)) in your local network. Unfortunately [official Lametric application](https://apps.lametric.com/apps/display_for_sonos/4961) is buggy and doesn't work correct at least for me. 
+This indicator shows current song which Sonos plays on Lametric Clock. Script should be launched externally on some 3rd system (maybe like [Raspberry Pi](https://www.raspberrypi.org/)) in your local network. This fork relies on the [node-sonos-http-api](https://github.com/jishi/node-sonos-http-api) and assumes you have it running as well. Unfortunately [official Lametric application](https://apps.lametric.com/apps/display_for_sonos/4961) is buggy and doesn't work correct at least for me. The [SoCo](https://github.com/SoCo/SoCo) python library has problems with the metadata of some of my favorite TuneIn radio stations (like 'Radioeins vom rbb'). Therefore I made this fork and removed the SoCo dependency.
 
 ## Requirements
 
 This panel is written on next libraries:
 
-* [SoCo](https://github.com/SoCo/SoCo)
+* [node-sonos-http-api](https://github.com/jishi/node-sonos-http-api)
 * Requests
 
 ## Traditional Installation
@@ -37,6 +37,7 @@ Get and create env variables [LAMETRIC_IP and LAMETRIC_API_KEY](https://lametric
 $ export LAMETRIC_API_KEY="e56b92_lametric_long_api_string_c2a0c4"
 $ export LAMETRIC_IP="192.168.1.25"
 $ export DELAY=30
+$ export NODE_SONOS_HTTP_API_IP="192.168.1.10"
 ```
 `DELAY` is a time in seconds how often to send notification to Lametric Time.
 
@@ -58,6 +59,7 @@ Also it's possible to launch this indicator in docker, but you need to build thi
   --net host \
   --env LAMETRIC_IP="192.168.1.25" \
   --env LAMETRIC_API_KEY="e56b92_lametric_long_api_string_c2a0c4" \
+  --env NODE_SONOS_HTTP_API_IP="192.168.1.10" \
   --env DELAY=60 \
   --restart unless-stopped \
   lametric-sonos
@@ -68,4 +70,4 @@ That's it. Hope it would be useful for you.
 **Links**: \
 https://lametric-documentation.readthedocs.io/en/latest/index.html \
 https://blog.aruehe.io/tag/lametric/ \
-http://docs.python-soco.com/en/latest/
+https://github.com/jishi/node-sonos-http-api/blob/master/README.md
